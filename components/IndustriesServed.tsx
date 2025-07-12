@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { Easing, motion } from 'framer-motion';
 import { FaPills, FaSeedling, FaTshirt, FaCar, FaOilCan, FaWater } from 'react-icons/fa';
 import { GiChemicalDrop } from 'react-icons/gi';
 
@@ -77,7 +77,7 @@ const IndustriesServed = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as Easing
       }
     },
     hover: {
@@ -151,7 +151,7 @@ const IndustriesServed = () => {
           {industries.map((industry) => (
             <motion.div
               key={industry.id}
-              variants={itemVariants}
+              //variants={itemVariants}
               whileHover="hover"
               className={`rounded-2xl overflow-hidden shadow-lg border border-gray-100 ${industry.color}`}
               onMouseEnter={() => setHoveredIndustry(industry.id)}

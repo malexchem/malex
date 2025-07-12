@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, Easing, motion } from 'framer-motion';
 import { FaShieldAlt, FaBoxOpen, FaTruck, FaExclamationTriangle, FaDownload } from 'react-icons/fa';
 
 const SafetyGuidesSection = () => {
@@ -84,7 +84,7 @@ const SafetyGuidesSection = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as Easing
       }
     },
     hover: {
@@ -162,7 +162,7 @@ const SafetyGuidesSection = () => {
           {safetyGuides.map((guide) => (
             <motion.div
               key={guide.id}
-              variants={itemVariants}
+             // variants={itemVariants}
               whileHover="hover"
               className={`rounded-2xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 ${guide.color} ${activeGuide === guide.id ? 'ring-4 ring-blue-500 ring-opacity-50' : ''}`}
               onClick={() => setActiveGuide(activeGuide === guide.id ? null : guide.id)}

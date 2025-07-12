@@ -57,7 +57,7 @@ const Footer = () => {
           >
             <motion.div
               className="flex items-center"
-              variants={floatingVariants}
+             // variants={floatingVariants}
               animate="float"
             >
               <FaFlask className="text-3xl mr-3 text-blue-400" />
