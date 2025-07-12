@@ -2,9 +2,8 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { Easing, motion } from 'framer-motion';
 import { FaFlask, FaAward, FaLeaf, FaGlobe, FaShieldAlt, FaHandsHelping, FaUserTie, FaHeart } from 'react-icons/fa';
-import Navbar from '@/components/Header';
 import Footer from '@/components/LuxuryFooter';
 import NavbarTwo from '@/components/HeaderTwo';
 
@@ -85,7 +84,7 @@ const AboutPage = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as Easing
       }
     }
   };
