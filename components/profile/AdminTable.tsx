@@ -1,6 +1,6 @@
 "use client";
 
-import { Edit, Trash, Plus, User } from "lucide-react";
+import { Edit, Trash, Plus } from "lucide-react";
 
 interface AdminTableProps {
   title: string;

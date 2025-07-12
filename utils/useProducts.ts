@@ -102,7 +102,7 @@ const useProducts = () => {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('https://malex-backend.onrender.com/api/products');
+      const response = await fetch('https://malexbackend.onrender.com/api/products');
       const data = await response.json();
 
       if (!response.ok) {

@@ -706,7 +706,7 @@ export const ProductModal = ({ isOpen, onClose, onAddProduct }: ProductModalProp
         formDataToSend.append('images', image);
       });
   
-      const response = await fetch('https://malex-backend.onrender.com/api/products', {
+      const response = await fetch('https://malexbackend.onrender.com/api/products', {
         method: 'POST',
         body: formDataToSend,
       });
