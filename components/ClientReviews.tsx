@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Easing } from 'framer-motion';
 import { FaChevronLeft, FaChevronRight, FaStar, FaUser } from 'react-icons/fa';
 
 const ClientReviews = () => {
@@ -97,7 +97,7 @@ const ClientReviews = () => {
       scale: 1,
       transition: { 
         duration: 0.4,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: [0.25, 0.1, 0.25, 1] as Easing
       }
     },
     exit: (direction: number) => ({
@@ -191,7 +191,7 @@ const ClientReviews = () => {
               <motion.div
                 key={activeReview}
                 custom={direction}
-                variants={variants}
+                //variants={variants}
                 initial="enter"
                 animate="center"
                 exit="exit"
