@@ -38,7 +38,7 @@ const CollectionsPage = () => {
   const { products, loading, error } = useProducts();
 
   // Transform the API products to match our frontend format
-  const transformedProducts = products.map((product) => {
+  /*const transformedProducts = products.map((product) => {
     const nameDetail = product.details.find(d => d.name === "Name") || product.details[0];
     return {
       id: product._id,
@@ -52,7 +52,25 @@ const CollectionsPage = () => {
       createdAt: product.createdAt,
       isNew: new Date(product.createdAt).getTime() > Date.now() - 30 * 24 * 60 * 60 * 1000,
     }
-  });
+  });*/
+  const transformedProducts = products.map((product) => {
+  const nameDetail = product.details?.find(d => d.name === "Name") || product.details?.[0];
+  const name = nameDetail?.value || "Chemical Product";
+
+  return {
+    id: product._id,
+    name,
+    mainCategory: product.mainCategory || "Unknown",
+    subCategory: product.subCategory || "Unknown",
+    batchNumber: product.batchNumber || "",
+    netContent: product.netContent || "",
+    certifications: product.certifications || [],
+    images: product.images || [],
+    createdAt: product.createdAt,
+    isNew: new Date(product.createdAt).getTime() > Date.now() - 30 * 24 * 60 * 60 * 1000,
+  };
+});
+
 
   // Extract unique categories, subcategories, and certifications for filters
   const mainCategories = [...new Set(transformedProducts.map(item => item.mainCategory))];
