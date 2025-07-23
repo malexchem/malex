@@ -84,7 +84,7 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/search" passHref legacyBehavior>
+            <Link href="" passHref legacyBehavior>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
@@ -181,7 +181,7 @@ const Navbar = () => {
                 </motion.a>
               ))}
               <div className="flex items-center space-x-6 pt-6">
-                <Link href="/search" passHref legacyBehavior>
+                <Link href="" passHref legacyBehavior>
                   <motion.a whileHover={{ scale: 1.1 }} className="text-white/80 hover:text-white">
                     <Search size={20} />
                   </motion.a>
